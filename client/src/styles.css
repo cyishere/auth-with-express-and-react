@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap");
+
+:root {
+  --color-black: #050102;
+  --color-pink: #ffb4ba;
+  --color-red: #f40104;
+  --color-white: #ffffff;
+  --color-yellow: #f8ba00;
+  --font-primary: "Roboto", sans-serif;
+  --font-secondary: "Roboto Condensed", sans-serif;
+  --text-sm: 0.75rem;
+  --text-base: 1rem;
+  --text-md: 1.33rem;
+  --text-lg: 1.78rem;
+  --text-xl: 2.37rem;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * CUSTOM
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-red);
+  color: var(--color-black);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  padding-top: 4.2rem;
+  padding-bottom: 4.2rem;
+}
+
+.header {
+  padding: 1rem;
+  margin-bottom: 4.2rem;
+}
+
+.site-title {
+  color: var(--color-white);
+  font-size: var(--text-xl);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  text-align: center;
+}
+
+.footer {
+  color: var(--color-pink);
+  padding: 1.78rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+}
+
+.footer a {
+  color: currentColor;
+}
+
+.footer a:hover {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.footer li {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.container {
+  margin: 4.2rem auto;
+  padding: 1.78rem;
+}
+.container.sm {
+  max-width: 600px;
+}
+.container.lg {
+  max-width: 1200px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 2fr;
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: 3fr;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: 4fr;
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-direction: column;
+}
+.label,
+.input {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.label {
+  font-size: var(--text-md);
+}
+.input {
+  border: 1px solid var(--color-black);
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  font-size: var(--text-base);
+}
+
+.btn {
+  border: none;
+  padding: 0.75rem 1.33rem;
+  font-size: var(--text-md);
+  text-transform: uppercase;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn.primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.btn.secondary {
+  background-color: var(--color-pink);
+  color: var(--color-black);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.card > * {
+  margin-bottom: 1rem;
+}
+.card .name {
+  font-size: var(--text-lg);
+}
+.card .job {
+  color: var(--color-pink);
+}
+.card .avatar {
+  order: -1;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.info {
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
