@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AuthContext from "./context/auth";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,7 +12,7 @@ function App() {
   const [userId, setUserId] = useState(null);
 
   return (
-    <AuthContext.Provider value={{ userId, token }}>
+    <>
       <div className="wrapper">
         <Header />
 
@@ -32,7 +31,7 @@ function App() {
         </main>
       </div>
       <Footer />
-    </AuthContext.Provider>
+    </>
   );
 }
 
