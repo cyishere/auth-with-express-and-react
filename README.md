@@ -4,3 +4,8 @@ This app demonstrate the "auth" logic. Read [this blog post](https://cyishere.de
 
 - `server/`: Express.js
 - `client/`: React.js
+
+# To-do:
+
+- [ ] login in backend
+- [ ] getUser in backend
