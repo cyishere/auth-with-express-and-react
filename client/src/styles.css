@@ -176,9 +176,11 @@ body {
   padding-bottom: 4.2rem;
 }
 
+/* HEADER */
 .header {
   padding: 1rem;
   margin-bottom: 4.2rem;
+  text-align: center;
 }
 
 .site-title {
@@ -186,9 +188,10 @@ body {
   font-size: var(--text-xl);
   font-family: var(--font-secondary);
   font-weight: 700;
-  text-align: center;
+  margin-bottom: 1.33rem;
 }
 
+/* FOOTER */
 .footer {
   color: var(--color-pink);
   padding: 1.78rem;
@@ -212,6 +215,8 @@ body {
   margin-left: 1rem;
 }
 
+/* ============ */
+/* MAIN CONTAINER */
 .container {
   margin: 4.2rem auto;
   padding: 1.78rem;
@@ -223,22 +228,35 @@ body {
   max-width: 1200px;
 }
 
+/* MEMBERS */
 .grid {
+  width: 100%;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr;
-
-  @media (min-width: 640px) {
-    grid-template-columns: 2fr;
+}
+@media screen and (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 768px) {
-    grid-template-columns: 3fr;
+}
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  @media (min-width: 1024px) {
-    grid-template-columns: 4fr;
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
+.btn-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* LOGIN */
 .form {
   width: 100%;
   display: flex;
@@ -278,7 +296,15 @@ body {
   background-color: var(--color-pink);
   color: var(--color-black);
 }
+.btn.link {
+  background: transparent;
+  color: var(--color-pink);
+  font-size: var(--text-base);
+  border-bottom: 1px solid var(--color-pink);
+  padding: 2px;
+}
 
+/* CARD */
 .card {
   display: flex;
   flex-direction: column;
@@ -302,6 +328,7 @@ body {
   border-radius: 50%;
 }
 
+/* PROFILE */
 .info {
   margin-bottom: 2rem;
 }
@@ -311,4 +338,18 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* MESSAGE */
+.message {
+  padding: 0.75rem;
+  border: 1px dashed var(--color-white);
+  color: var(--color-white);
+  text-align: center;
+  font-size: var(--text-md);
+}
+.message.error {
+  border-color: var(--color-yellow);
+  color: var(--color-yellow);
 }
