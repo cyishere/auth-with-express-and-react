@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        <Header />
+        <Header userId={userId} />
 
         <main className={`container ${screen}`}>
           {screen === "sm" ? (

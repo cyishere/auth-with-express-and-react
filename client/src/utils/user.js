@@ -1,4 +1,4 @@
-import { api } from "./helper";
+import { api } from "./helpers";
 
 const options = (token) => ({
   method: "GET",

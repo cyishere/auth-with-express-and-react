@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUser } from "../services/user";
+import { getUser } from "../utils/user";
 
 import Card from "./Card";
 import Message from "./Message";

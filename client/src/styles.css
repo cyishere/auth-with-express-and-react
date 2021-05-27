@@ -348,6 +348,7 @@ body {
   color: var(--color-white);
   text-align: center;
   font-size: var(--text-md);
+  margin-bottom: 2rem;
 }
 .message.error {
   border-color: var(--color-yellow);

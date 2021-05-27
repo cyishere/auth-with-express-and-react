@@ -6,10 +6,11 @@ const PORT = 5000;
 
 const userRouter = require("./routes/user");
 
-const { errorHandler } = require("./utils/middlewares");
+const { errorHandler, requestLogger } = require("./utils/middlewares");
 
 app.use(express.json());
 app.use(cors());
+app.use(requestLogger);
 
 app.use("/api/user", userRouter);
 

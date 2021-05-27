@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "../services/auth";
+import { api } from "../utils/helpers";
 import Message from "./Message";
 
 const LoginForm = ({ setUserId, setToken }) => {
@@ -16,23 +16,38 @@ const LoginForm = ({ setUserId, setToken }) => {
     });
   };
 
-  const doLogin = async (e) => {
+  const loginSubmit = async (e) => {
     e.preventDefault();
-    const result = await login(info);
-    console.log("result:", result);
-    if (result?.userId) {
-      setUserId(result.userId);
-      setToken(result.setToken);
-    } else {
-      setMessage(result);
-    }
+
+    return fetch(api, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.type !== "error") {
+          // login success
+          setUserId(result.userId);
+          setToken(result.setToken);
+        } else {
+          // show error messages
+          setMessage(result.message);
+        }
+      })
+      .catch((error) => {
+        console.log("error:", error);
+        setMessage(error.message);
+      });
   };
 
   return (
     <>
       {message && <Message message={message} error />}
 
-      <form className="form" onSubmit={doLogin}>
+      <form className="form" onSubmit={loginSubmit}>
         <label className="label">Name:</label>
         <input
           type="text"
