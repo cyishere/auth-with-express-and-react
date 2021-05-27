@@ -14,7 +14,12 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        <Header userId={userId} />
+        <Header
+          userId={userId}
+          setToken={setToken}
+          setUserId={setUserId}
+          setScreen={setScreen}
+        />
 
         <main className={`container ${screen}`}>
           {screen === "sm" ? (
@@ -26,7 +31,7 @@ function App() {
               )}
             </>
           ) : (
-            <Members />
+            <Members token={token} setScreen={setScreen} />
           )}
         </main>
       </div>

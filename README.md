@@ -2,10 +2,35 @@ This app demonstrate the "auth" logic. Read [this blog post](https://cyishere.de
 
 **auth**: authentication/authorization
 
-- `server/`: Express.js
-- `client/`: React.js
+- `server/`: Express
+- `client/`: React
 
-# To-do:
+Install the dependencies in both `server/` and `client/`:
 
-- [ ] login in backend
-- [ ] getUser in backend
+```bash
+yarn install
+
+# or
+
+npm install
+```
+
+Run the server, in `server/`:
+
+```bash
+yarn dev
+
+# or
+
+npm run dev
+```
+
+Run the client, in `client/`:
+
+```bash
+yarn start
+
+# or
+
+npm run start
+```

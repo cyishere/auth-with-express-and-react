@@ -19,7 +19,7 @@ const LoginForm = ({ setUserId, setToken }) => {
   const loginSubmit = async (e) => {
     e.preventDefault();
 
-    return fetch(api, {
+    return fetch(`${api}/user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,10 +28,11 @@ const LoginForm = ({ setUserId, setToken }) => {
     })
       .then((response) => response.json())
       .then((result) => {
+        console.log("result in Login:", result);
         if (result.type !== "error") {
           // login success
           setUserId(result.userId);
-          setToken(result.setToken);
+          setToken(result.token);
         } else {
           // show error messages
           setMessage(result.message);
